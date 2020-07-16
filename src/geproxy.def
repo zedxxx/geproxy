@@ -1,0 +1,11 @@
+LIBRARY "geproxy.dll"
+
+EXPORTS
+    WinHttpOpen = _WinHttpOpen    
+    WinHttpCloseHandle = _WinHttpCloseHandle
+    WinHttpGetProxyForUrl = _WinHttpGetProxyForUrl
+    WinHttpGetDefaultProxyConfiguration = _WinHttpGetDefaultProxyConfiguration
+    WinHttpGetIEProxyConfigForCurrentUser = _WinHttpGetIEProxyConfigForCurrentUser
+    WinHttpDetectAutoProxyConfigUrl = _WinHttpDetectAutoProxyConfigUrl
+    InternetGetConnectedState = _InternetGetConnectedState
+    
