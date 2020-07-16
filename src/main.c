@@ -11,24 +11,24 @@ proxy_config_t gconfig = {
 
 BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 {
-	switch (fdwReason)
-	{
-	case DLL_PROCESS_ATTACH:
-		DisableThreadLibraryCalls(hinstDLL);
-		if (!gconfig.initialized) {
+    switch (fdwReason)
+    {
+    case DLL_PROCESS_ATTACH:
+        DisableThreadLibraryCalls(hinstDLL);
+        if (!gconfig.initialized) {
             gconfig.initialized = true;
             read_proxy_config(&gconfig);
             #ifdef DEBUG
             $("Initialized");
             #endif
-		}
-		break;
+        }
+        break;
 
-	case DLL_PROCESS_DETACH:
+    case DLL_PROCESS_DETACH:
         #ifdef DEBUG
         $("Process detach");
         #endif
-		break;
-	}
-	return TRUE;
+        break;
+    }
+    return TRUE;
 }
